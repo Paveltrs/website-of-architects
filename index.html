@@ -11,21 +11,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <nav class="navbar">
-            <div class="navbar-container">
-                <div class="navbar-logo">
-                  <a href="#"><img src="./icons/logo.svg" alt="Your Logo"></a>
-                </div>
-                <ul class="navbar-links">
-                  <li><a href="#">Главная</a></li>
-                  <li><a href="#">Галерея</a></li>
-                  <li><a href="#">Проекты</a></li>
-                  <li><a href="#">Сертификаты</a></li>
-                  <li><a href="#">Контакты</a></li>
-                </ul>
-              </div>
-        </nav>
+  <div class="container">
+        <header>
+          <div class="logo">
+            <img src="./icons/logo.svg" alt="logo">
+          </div>
+          <nav>
+            <ul>
+              <li><a href="#">Главная</a></li>
+              <li><a href="#">Галерея</a></li>
+              <li><a href="#">Проекты</a></li>
+              <li><a href="#">Сертификаты</a></li>
+              <li><a href="#">Контакты</a></li>
+              <!-- <li class="line"></li> -->
+            </ul>
+          </nav>
+        </header>
         <main>
           <!-- heading content  -->
           <div class="heading-content">
@@ -87,8 +88,56 @@
               <!-- Our projects  -->
             <div class="our__projects-block">
               <h1>Наши проекты</h1>
-  
-                  <div class="upper-images">
+              <div class="row">
+                <div class="col project-item">
+                  <img src="./img/our-projects-top-left.jpg" alt="Project 1" />
+                  <div class="overlay">
+                    <div class="overlay-content topping">
+                      <h3>Досуговый <br/> центр</h3>
+                      <p class="paragraph">Подробнее &nbsp; &#8594;</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col project-item">
+                  <img src="./img/our-projects-top-right.jpg" alt="Project 2" />
+                  <div class="overlay">
+                    <div class="overlay-content topping">
+                      <h3>Досуговый <br/> центр</h3>
+                      <p class="paragraph">Подробнее &nbsp; &#8594;</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-4 project-item">
+                  <img src="./img/our-project-bottom-left.jpg" alt="Project 3" />
+                  <div class="overlay">
+                    <div class="overlay-content">
+                      <h3 class="adapt">Досуговый центр</h3>
+                      <p>Подробнее &nbsp; &#8594;</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-4 project-item">
+                  <img src="./img/our-project-bottom-middle.jpg" alt="Project 4" />
+                  <div class="overlay">
+                    <div class="overlay-content">
+                      <h3 class="adapt">Досуговый центр</h3>
+                      <p>Подробнее &nbsp; &#8594;</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-4 project-item">
+                  <img src="./img/our-project-bottom-right.jpg" alt="Project 5" />
+                  <div class="overlay">
+                    <div class="overlay-content">
+                      <h3 class="adapt">Досуговый центр</h3>
+                      <p>Подробнее &nbsp; &#8594;</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                  <!-- <div class="upper-images">
                     <div class="image-wrapper">
                       <img class="upper__img" src="./img/our-projects-top-left.jpg" alt="firstProject">
                       <div class="overlay">
@@ -96,7 +145,7 @@
                           <div class="overlay-text">
                               Досуговый центр
                           </div>
-                          <div class="overylay-subtext">
+                          <div class="overlay-subtext">
                               Подробнее &#8594;
                           </div>
                       </div>
@@ -115,8 +164,8 @@
                           </div>
                           </div>
                      </div>
-                  </div>
-                  <div class="sub-images">
+                  </div> -->
+                  <!-- <div class="sub-images">
                       <div class="image-wrapper-sub">
                           <img src="./img/our-project-bottom-left.jpg" alt="3Project" class="sub__img">
                           <div class="overlay">
@@ -156,14 +205,11 @@
                           </div>
                           </div>
                       </div>
-                      
-                      
-                      
-                  </div>
+                  </div> -->
   
-              <button type="button" class="project-button">
-                  Все проекты &#8594;
-              </button>
+                  <button type="button" class="project-button">
+                    Все проекты &#8594;
+                </button>
           </div>
             <!-- Contact us block  -->
             <section class="contact">

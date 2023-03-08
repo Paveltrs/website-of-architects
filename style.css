@@ -72,70 +72,79 @@ body {
   margin: 0 auto;
 }
 
-.navbar-container {
-  display: flex; 
-  justify-content: space-between; 
-  align-items: center; 
-  height: 70px; 
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 102px;
+  max-width: 1440px;
+  width: 100%;
+  background-color: #ffffff;
 }
 
-.navbar-logo img {
-  height: 50px; 
-
+.logo img {
+  height: 60px;
+  width: auto;
+  cursor: pointer;
 }
 
-.navbar-links {
-  display: flex; 
-  list-style: none; 
-  margin: 0; 
-  padding: 0; 
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  margin: 0 7.76rem 0 0;
+  padding: 0;
 }
 
-.navbar-links li {
-  margin-left: 20px;
-}
-
-.navbar-links li:first-child {
-  margin-left: 0; 
-}
-
-.navbar-links a {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 12px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  text-decoration: none; 
-  color: #333; 
-
-  padding: 10px; 
-  transition: all 0.3s ease-in-out; 
-}
-
-.navbar-links a:hover {
-  background-color: #fff; 
-  color: #333; 
+nav li {
+  /* margin: 0 20px; */
   position: relative;
 }
 
-.navbar-links a:hover::before,
-.navbar-links a:hover::after {
-  content: ''; 
-  position: absolute; 
-  left: 0; 
-  right: 0; 
-  height: 1px; 
-  background-color: #333; 
-  transition: all 0.3s ease-in-out; 
+nav li a {
+  display: block;
+  color: #333;
+  position: relative;
+
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 12px;
+
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
-.navbar-links a:hover::before {
-  top: 4px; 
+nav li a:hover {
+  color: #333;
 }
 
-.navbar-links a:hover::after {
-  bottom: 4px; 
+nav li a:hover:before,
+nav li a:hover:after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 1px;
+  background-color: #333;
+  transition: width 3s ease-in-out;
+}
+
+nav li a:hover:before {
+  top: -4px;
+  left: 0;
+}
+
+nav li a:hover:after {
+  bottom: -4px;
+  right: 0;
+}
+
+nav li a:hover:before,
+nav li a:hover:after {
+  width: 100%;
 }
 
 .heading-content {
@@ -154,27 +163,24 @@ body {
 }
 
 .heading-title {
-  width: 277.76px;
-  height: 64px;
-  left: 135px;
-  top: 438px;
+  height: 4rem;
 
   font-style: normal;
   font-weight: 300;
-  font-size: 64px;
-  line-height: 64px;
+  font-size: 4rem;
+  line-height: 4rem;
   color: #BDBDBD;
 }
 
 .heading-title-sub {
-  width: 331px;
+ 
   height: 64px;
   left: 135px;
   top: 502px;
 
   font-style: normal;
   font-weight: 700;
-  font-size: 64px;
+  font-size: 4rem;
   line-height: 64px;
   color: #333333;
 }
@@ -219,7 +225,7 @@ body {
 .slide-current-num {
   font-style: normal;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 24px;
   text-decoration: none;
   color: #BDBDBD;
@@ -228,7 +234,7 @@ body {
 .slide-next-num {
   font-style: normal;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 24px;
   text-decoration: none;
   color: #BDBDBD;
@@ -263,7 +269,7 @@ body {
 
   font-style: normal;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 0.75rem;
   line-height: 12px;
 
   letter-spacing: 0.2em;
@@ -275,7 +281,7 @@ body {
 }
 
 .button-heading:hover {
-  background-color: rgb(225, 225, 225);
+  background-color: whitesmoke;
 }
 
 .arrow_button-right {
@@ -329,7 +335,6 @@ body {
 }
 
 .about__company-title {
-  width: 354px;
   height: 64px;
   margin-bottom: 20px;
 
@@ -430,44 +435,46 @@ body {
   color: #333333;
 }
 
-/* Our projects */
-.our-projects {
-  margin-top: 120px;
-  margin-bottom: 120px;
+.our__projects-block {
+  margin: 120px 0 120px 0;
+  height: 765px;
+  position: relative;
 }
 
-.our__project-title {
-  width: 427px;
-  height: 64px;
+.our__projects-block h1 {
   margin-bottom: 60px;
 
   font-family: 'TT Hoves';
   font-style: normal;
   font-weight: 300;
-  font-size: 64px;
-  line-height: 64px;
+  font-size: 4rem;
+  line-height: 4rem;
 
   color: #BDBDBD;
 }
 
-.image-grid {
+.row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
   grid-gap: 30px;
 }
 
-.image-wrapper {
+.project-item {
   position: relative;
+  overflow: hidden;
 }
 
-.image-wrapper img {
+.col {
+  margin-bottom: 30px;
+}
+
+.project-item img {
   display: block;
   width: 100%;
   height: 255px;
-  object-fit: cover;
 }
 
-.image-overlay {
+.project-item .overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -475,231 +482,61 @@ body {
   height: 100%;
   background-color: #333;
   opacity: 0;
+  transition: opacity 0.3s ease-in-out;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  transition: opacity 0.3s ease;
+  justify-content: center;
+  text-align: left;
 }
 
-.image-wrapper:hover .image-overlay {
+.project-item:hover .overlay {
   opacity: 0.8;
 }
 
-.image-overlay .centre {
-  width: 413px;
-  height: 128px;
-
-  font-family: 'TT Hoves';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 64px;
-  line-height: 64px;
-
-  color: #FFFFFF;
-  text-transform: uppercase;
-
-}
-
-.wide {
-  grid-column: span 2;
-}
-
-.wide-2 {
-  grid-column: span 2;
-}
-
-.wide-3 {
-  grid-column: span 1;
-}
-
-.projects__info {
-  width: 93px;
-  height: 12px;
-  
-  font-family: 'Gothic A1', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 12px;
-
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  
-  color: #FFFFFF;
-}
-
-.project-images {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-.our__projects-block {
-height: 765px;
-position: relative;
-margin-top: 120px;
-}
-
-.our__projects-block h1 {
-  width: 519px;
-  height: 64px;
-  margin-bottom: 60px;
-
-
-  font-family: 'TT Hoves';
-  font-style: normal;
-  font-weight: 300;
-  font-size: 64px;
-  line-height: 64px;
-
-  color: #BDBDBD;
-}
-
-.image-wrapper {
-  position: relative;
-  width: 570px;
-  height: 255px;
-}
-
-.image-wrapper-sub {
-  position: relative;
-  height: 255px;
-  top: 0;
-  left: 0;
-
-}
-
-.image-wrapper-sub .overlay {
-width: 100%;
-height: 100%;
-top: 0;
-left: 0;
-}
-
-.image-wrapper img,
-.image-wrapper-sub img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  cursor: pointer;
-}
-
-.image-wrapper-sub .overlay-text,
-.image-wrapper-sub .overlay-subtext {
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-}
-
-.overlay {
-
-          position: absolute;
-          top: 0;
-          left: 0;
-         opacity: 0;
-      transition: opacity 0.5s;
-         background-color: #333;
-       color: #fff;
-    width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    
-}
-
-.overlay-text-centre {
+.overlay-content {
+  color: #fff;
   text-align: left;
-  margin: auto;
 }
 
-.adjust-text {
-margin-left: 100px;
-font-size: 3vw;
+.topping {
+  margin-bottom: 50px;
 }
 
-.adjust-subtext {
-margin-left: 100px;
-font-size: 1vw;
-}
+.overlay-content h3 {
+  font-size: 3.5em;
+  margin-bottom: 10px;
 
-.adjust-text1 {
-margin-right: 90px;
-
-font-size: 3vw;
-}
-
-.adjust-subtext1 {
-margin-left: 45px;
-font-size: 1vw;
-}
-
-.overlay-text {
-  width: 413px;
-  height: 128px;
-  margin-bottom: 8px;
+  text-transform: uppercase;
 
   font-family: 'TT Hoves';
   font-style: normal;
   font-weight: 700;
-  font-size: 4vw;
-  line-height: 64px;
 
   color: #FFFFFF;
 }
 
+.adapt {
+  font-size: 1.8em !important;
+}
 
-.overlay-subtext {
-  width: 93px;
-  height: 12px;
-
-
+.overlay-content p {
   font-family: 'Gothic A1';
   font-style: normal;
   font-weight: 400;
-  font-size: 12px;
-  line-height: 12px;
-  /* identical to box height, or 100% */
+  line-height: 0.75rem;
 
   letter-spacing: 0.2em;
   text-transform: uppercase;
 
   color: #FFFFFF;
+
+  font-size: 0.7em;
+  margin: 0;
+  cursor: pointer;
 }
 
-.image-wrapper:hover .overlay,
-.image-wrapper-sub:hover .overlay {
-  opacity: 0.8;
-}
-
-.image-wrapper-sub:hover .overlay {
-width: 100%;
-height: 100%;
-top: 30px;
-left: 0;
-}
-
-
-.upper-images,
-.sub-images {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 30px;
-}
-
-.upper__img {
-  max-width: 570px;
-  width: 100%;
-  height: 255px;
-}
-
-.sub__img {
-  margin: 30px 0 30px 0;
+.paragraph {
+  font-size: 0.8em !important;
 }
 
 .project-button {
@@ -711,8 +548,8 @@ left: 0;
   font-family: 'TT Hoves';
   font-style: normal;
   font-weight: 400;
-  font-size: 12px;
-  line-height: 12px;
+  font-size: 0.75rem;
+  line-height: 0.75rem;
 
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -738,8 +575,8 @@ left: 0;
   font-family: 'TT Hoves';
   font-style: normal;
   font-weight: 300;
-  font-size: 64px;
-  line-height: 64px;
+  font-size: 4rem;
+  line-height: 4rem;
   text-align: left;
   margin-bottom: 22px;
 
@@ -779,8 +616,8 @@ left: 0;
   font-family: 'TT Hoves';
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 17px;
+  font-size: 0.875rem;
+  line-height: 1.0625rem;
   letter-spacing: 0.04em;
 
   color: #8D8D8D;
@@ -808,7 +645,7 @@ left: 0;
 .contact-form .form-left textarea {
   resize: none;
   height: 147px;
-  padding-top: 14px;
+  padding-top: 0.875rem;
 }
 
 .contact-form .form-left label.checkbox-label {
@@ -843,8 +680,8 @@ left: 0;
   font-family: 'TT Hoves';
   font-style: normal;
   font-weight: 400;
-  font-size: 12px;
-  line-height: 12px;
+  font-size: 0.75rem;
+  line-height: 0.75rem;
   width: 222px;
   height: 71px;
   color: white;
@@ -899,11 +736,11 @@ left: 0;
   grid-area: info;
   left: 400px;
   top: 20px;
-  font-family: Roboto;
+  font-family: 'TT Hoves';
   font-style: normal;
   font-weight: bold;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: 1rem;
+  line-height: 1.1875rem;
   letter-spacing: 0.03em;
   color: #FFFFFF;
 }
@@ -940,8 +777,8 @@ a.ft {
   font-family: 'TT Hoves';
   font-style: normal;
   font-weight: 500;
-  font-size: 14px;
-  line-height: 24px;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
 
   letter-spacing: 0.03em;
   text-decoration: none;
@@ -952,8 +789,8 @@ p.ft {
   font-family: 'TT Hoves';
   font-style: normal;
   font-weight: 500;
-  font-size: 14px;
-  line-height: 24px;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
   align-items: center;
   letter-spacing: 0.03em;
   color: #fff;
@@ -964,8 +801,8 @@ h3.ft {
   font-family: 'TT Hoves';
   font-style: normal;
   font-weight: bold;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: 1rem;
+  line-height: 1.1875rem;
   color: #fff;
 }
 
@@ -1042,10 +879,9 @@ h3.ft {
   justify-self: center;
   justify-items: center;
   color: rgba(200, 200, 200, 0.5);
-  padding-top: 15px;
-  padding-bottom: 15px;
-  font-size: 12px;
-  line-height: 22px;
+  padding-top: 0.9375rem;
+  padding-bottom: 0.9375rem;
+  font-size: 0.75rem;
+  line-height: 1.375rem;
   color: rgba(200, 200, 200, 0.5);
-
 }
